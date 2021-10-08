@@ -118,5 +118,39 @@ vi components.yaml
 
 kubectl create -f components.yaml
 ```
+#emptyDir
+```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-rs-fortune
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp-rs-fortune
+  template:
+    metadata:
+      labels:
+        app: myapp-rs-fortune
+    spec:
+      containers:
+      - name: web-server
+        image: nginx:alpine
+        volumeMounts:
+        - name: web-fortune
+          mountPath: /usr/share/nginx/html
+          readOnly: true
+        ports:
+        - containerPort: 80
+      - name: html-generator
+        image: ghcr.io/c1t1d0s7/fortune
+        volumeMounts:
+        - name: web-fortune
+          mountPath: /var/htdocs
+      volumes:
+      - name: web-fortune
+        emptyDir: {}
+```
 ## github jenkins token
 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
