@@ -77,7 +77,7 @@ chmod 700 get_helm.sh
 ## ingress-nginx 설치
 ```
 helm repo add stable https://charts.helm.sh/stable
-helm repo add ingress-nginx https://kubernetes.github.i
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
 helm repo list
 helm show values ingress-nginx/ingress-nginx > /tmp/ingress-nginx.yaml
