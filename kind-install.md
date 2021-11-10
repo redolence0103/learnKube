@@ -1,4 +1,5 @@
 # KIND(K8S in Docker) 기반의 K8S Cluster 환경 설정
+<img width="100" src="![docker-process-docker-limit drawio](https://user-images.githubusercontent.com/90162116/141114099-ac264413-d995-4782-8888-89a9412d3259.png)"
 ## 서버(vm) 환경 설정 Docker 설치
 ```
 sudo sysctl -w net.ipv4.ip_forward=1
